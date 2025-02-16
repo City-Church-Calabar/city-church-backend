@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import audio from "./routes/audio";
 import book from "./routes/book";
+import auth from "./routes/auth";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use("/uploads", express.static("uploads"));
 // Routes
 app.use("/api/audio", audio);
 app.use("/api/book", book);
+app.use("/api/auth", auth);
 
 // Connect to MongoDB
 if (!process.env.MONGO_URI) {
